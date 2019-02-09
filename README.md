@@ -25,8 +25,8 @@ Things you may want to cover:
 ## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|references|user|null: false, foreign_key: true|
+|references|group|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -38,8 +38,8 @@ Things you may want to cover:
 |id|integer||
 |body|text||
 |iamge|string||
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|references|user|null: false, foreign_key: true|
+|references|group|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
