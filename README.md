@@ -56,6 +56,7 @@ Things you may want to cover:
 ### Association
 - has_many :members
 - has_many :messages
+- has_many :users
 
 ## userテーブル
 |Column|Type|Options|
@@ -67,3 +68,4 @@ Things you may want to cover:
 ### Association
 - has_many :members
 - has_many :messages
+- has_many :groups
