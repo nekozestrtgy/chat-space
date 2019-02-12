@@ -1,0 +1,41 @@
+!!!
+%html
+  %head
+  .side-bar
+    .side-bar__user-panel
+      %strong.user-name user-name
+      = link_to root_path do
+        %i.fas.fa-cog.fa-fw
+      = link_to root_path do
+        %i.far.fa-edit.fa-fw
+    .side-bar__group-panel
+      .side-bar__group-panel__groups
+        %p.group__name group-name
+        %p.group__latest-message latest message
+        %p.group__name aaaaaaaa
+        %p.group__latest-message ewatawtwa
+  .chat-area
+    .chat-area__group
+      .chat-area__group__description
+        %p.chat-area__group__description__name group-name
+        %p.chat-area__group__description__members Member : user-name,etegege
+      .chat-area__group__edit
+        %p.chat-area__group__edit_text Edit
+    .chat-area__message
+      %p.chat-area__message__user-name user-name
+      %p.chat-area__message__date 1111/22/33(xx) 44:55:66
+      %p.chat-area__message__text texttexttext
+      %p.chat-area__message__user-name dastwta
+      %p.chat-area__message__date 1111/22/33(xx) 44:55:66
+      %p.chat-area__message__text tdxsgaeww4heht
+      %p.chat-area__message__user-name sdaghrj5rtfd
+      %p.chat-area__message__date 1111/22/33(xx) 44:55:66
+      %p.chat-area__message__text rherherdfgsg
+    .chat-area__form
+      %form
+        %label
+          %span.filelabel
+            %i.far.fa-image
+          %input.file{type: "file"}
+        %input.text{type: "text", placeholder: "type a message"}
+        %input.button{type: "submit", value: "Send"}

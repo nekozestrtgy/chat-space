@@ -1,0 +1,6 @@
+@mixin basePadding($padding: 20px) {
+  padding: $padding;
+}
+@mixin basePaddingMore($padding: 0 40px) {
+  padding: $padding;
+}
