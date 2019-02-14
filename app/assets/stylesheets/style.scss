@@ -140,11 +140,11 @@
             vertical-align: bottom;
           }
         }
-        input.file {
+        .file {
            display: none;
         }
       }
-      input.text {
+      .text {
         float: left;
         height: 50px;
         width: 64.5vw;
@@ -153,7 +153,7 @@
         border: hidden;
         position: relative;
         }
-      input.button {
+      .button {
         box-sizing: border-box;
         float: right;
         height: 50px;
