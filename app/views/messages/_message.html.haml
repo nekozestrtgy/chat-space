@@ -1,0 +1,8 @@
+%p.chat-area__message__user-name
+  = message.user.name
+%p.chat-area__message__date
+  = message.created_at.strftime("%Y/%m/%d %h:%M")
+%p.chat-area__message__text
+  - if message.content.present?
+    = message.content
+  = image_tag message.image.url, class: 'lower-message__image' if message.image.present?

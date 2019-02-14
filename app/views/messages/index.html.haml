@@ -10,20 +10,13 @@
       .chat-area__group__edit
         %p.chat-area__group__edit_text Edit
     .chat-area__message
-      %p.chat-area__message__user-name user-name
-      %p.chat-area__message__date 1111/22/33(xx) 44:55:66
-      %p.chat-area__message__text texttexttext
-      %p.chat-area__message__user-name dastwta
-      %p.chat-area__message__date 1111/22/33(xx) 44:55:66
-      %p.chat-area__message__text tdxsgaeww4heht
-      %p.chat-area__message__user-name sdaghrj5rtfd
-      %p.chat-area__message__date 1111/22/33(xx) 44:55:66
-      %p.chat-area__message__text rherherdfgsg
+      = render partial: 'message', collection: @messages
     .chat-area__form
       %form
-        %label
-          %span.filelabel
-            %i.far.fa-image
-          %input.file{type: "file"}
-        %input.text{type: "text", placeholder: "type a message"}
-        %input.button{type: "submit", value: "Send"}
+        =form_for [@group, @message] do |f|
+          %label
+            %span.filelabel
+              %i.far.fa-image
+            = f.file_field :image, class: 'file'
+          = f.text_field :content, class: 'text', placeholder: 'type a message'
+          = f.submit 'Send', class: 'button'
