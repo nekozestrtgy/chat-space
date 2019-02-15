@@ -10,10 +10,10 @@
       .chat-area__group__edit
         %p.chat-area__group__edit_text Edit
     .chat-area__message
-      = render partial: 'message', collection: @messages
+      = render @messages
     .chat-area__form
       %form
-        =form_for [@group, @message] do |f|
+        = form_for [@group, @message] do |f|
           %label
             %span.filelabel
               %i.far.fa-image
