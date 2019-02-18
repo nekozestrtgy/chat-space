@@ -5,18 +5,25 @@
   .chat-area
     .chat-area__group
       .chat-area__group__description
-        %p.chat-area__group__description__name group-name
-        %p.chat-area__group__description__members Member : user-name,etegege
+        .chat-area__group__description__name
+          = @group.name
+        .chat-area__group__description__members
+          Member：
+          - @group.user.each do |user|
+            .chat-area__group__description__members__name
+              = user.name
       .chat-area__group__edit
-        %p.chat-area__group__edit_text Edit
+        = link_to edit_group_path(current_user.id) do
+          %p.chat-area__group__edit_text Edit
     .chat-area__message
       = render @messages
     .chat-area__form
-      %form
+      .form
         = form_for [@group, @message] do |f|
-          %label
-            %span.filelabel
-              %i.far.fa-image
-            = f.file_field :image, class: 'file'
-          = f.text_field :content, class: 'text', placeholder: 'type a message'
+          .input-box
+            %label
+              %span.filelabel
+                %i.far.fa-image
+              = f.file_field :image, class: 'file'
+            = f.text_field :content, class: 'text', placeholder: 'type a message'
           = f.submit 'Send', class: 'button'

@@ -7,7 +7,6 @@
   float: left;
   &__user-panel {
     background-color: $dark;
-    box-sizing: border-box;
     width: 300px;
     height: 100px;
     @include basePadding;
@@ -26,10 +25,10 @@
   }
   .side-bar__group-panel {
     background-color: $lightDark;
-    box-sizing: border-box;
     @include basePadding;
     height: calc(100vh - 100px);
     width: 300px;
+    overflow-y: scroll;
     &__groups {
       .group__name {
         font-size: 15px;
@@ -43,6 +42,9 @@
       }
     }
   }
+  .side-bar__group-panel::-webkit-scrollbar {
+    display: none;
+  }
 }
 .chat-area {
   background-color: $white;
@@ -53,7 +55,6 @@
   left: 300px;
   &__group {
     background-color: $white;
-    box-sizing: border-box;
     z-index: 1;
     width: calc(100vw - 300px);
     height: 100px;
@@ -72,6 +73,10 @@
         font-size: 12px;
         color: #999999;
         bottom: 0;
+        display: flex;
+        &__name {
+          margin-right: 0.5rem;
+        }
       }
     }
     &__edit {
@@ -89,12 +94,12 @@
   }
   &__message {
     position: absolute;
-    box-sizing: border-box;
     z-index: 0;
     background-color: $lightGray;
     @include basePaddingMore(146px 40px 0);
     width: calc(100vw - 300px);
     height: 100vh;
+    overflow-y: scroll;
     &__user-name {
       display: inline-block;
       float: left;
@@ -116,45 +121,48 @@
       padding: 10px 0 40px;
     }
   }
+  &__message::-webkit-scrollbar {
+  display: none;
+  }
   &__form {
     position: fixed;
     bottom: 0;
     height: 90px;
     width: calc(100vw - 300px);
-    box-sizing: border-box;
     background-color: $gray;
     @include basePaddingMore(20px 40px);
     form {
       height:50px;
       position: relative;
-      label {
-        position: absolute;
-        z-index: 1;
-        top: 12.5px;
-        left: calc(64.5vw - 35px);
-        .filelabel {
-          display: inline-block;
-          cursor: pointer;
-          i.far.fa-image {
-            font-size: 25px;
-            vertical-align: bottom;
+      display: flex;
+      .input-box {
+        label {
+          position: absolute;
+          z-index: 1;
+          top: 12.5px;
+          left: calc(64.5vw - 35px);
+          .filelabel {
+            display: inline-block;
+            cursor: pointer;
+            i.far.fa-image {
+              font-size: 25px;
+              vertical-align: bottom;
+            }
+          }
+          .file {
+             display: none;
           }
         }
-        .file {
-           display: none;
+        .text {
+          float: left;
+          height: 50px;
+          width: 64.5vw;
+          padding: 0 10px;
+          border: hidden;
+          position: relative;
         }
       }
-      .text {
-        float: left;
-        height: 50px;
-        width: 64.5vw;
-        padding: 0 10px;
-        box-sizing: border-box;
-        border: hidden;
-        position: relative;
-        }
       .button {
-        box-sizing: border-box;
         float: right;
         height: 50px;
         width: 100px;
