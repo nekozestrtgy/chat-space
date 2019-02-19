@@ -7,10 +7,10 @@ $(function() {
                 ${message.created_at}
               </p>
               <p class=chat-area__message__text>
-                ${ message.text ?
-                  message.text
-                  :
-                  `<img class = "lower-message__image", src="${message.image.url}">` }
+                ${ message.text ? message.text : ''}
+                ${ message.image.url !== null ?
+                  `<img class = "lower-message__image", src="${message.image.url}">` :
+                  ''}
               </p>
               `
     return html;
@@ -31,6 +31,7 @@ $(function() {
       var html = buildHTML(data);
       $('.chat-area__message').append(html);
       $('.text').val('')
+      $('.file').val('')
       $('.chat-area__message').animate({scrollTop: $('.chat-area__message')[0].scrollHeight}, 500, 'swing')
     })
     .fail(function(){
