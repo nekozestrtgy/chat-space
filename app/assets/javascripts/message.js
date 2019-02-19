@@ -7,7 +7,10 @@ $(function() {
                 ${message.created_at}
               </p>
               <p class=chat-area__message__text>
-                ${message.text}
+                ${ message.text ?
+                  message.text
+                  :
+                  `<img class = "lower-message__image", src="${message.image.url}">` }
               </p>
               `
     return html;
@@ -38,3 +41,4 @@ $(function() {
     });
   })
 });
+
