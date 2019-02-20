@@ -57,7 +57,9 @@ function appendAddUser(user_name, user_id) {
     var user_id = $(".user-search-add").attr('data-user-id')
     $("#user-search-result").empty();
     appendAddUser(user_name, user_id);
+    $(".chat__group_name").attr('type', 'reset');
     $("form")[0].reset();
+    $(".chat__group_name").attr('type', 'text');
   });
   $(document).on("click", ".user-search-remove",function() {
     $("#chat-group-user").remove();
