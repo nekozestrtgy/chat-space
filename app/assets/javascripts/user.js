@@ -55,7 +55,6 @@ function appendAddUser(user_name, user_id) {
   $(document).on("click", ".user-search-add",function() {
     var user_name = $(".user-search-add").attr('data-user-name')
     var user_id = $(".user-search-add").attr('data-user-id')
-    console.log(user_name,user_id)
     $("#user-search-result").empty();
     appendAddUser(user_name, user_id);
     $("#user-search-field").val("");
