@@ -1,4 +1,4 @@
-server '13.112.91.135', port: 22, roles: [:app, :web, :db], primary:true
+# server '13.112.91.135', port: 22, roles: [:app, :web, :db], primary:true
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
